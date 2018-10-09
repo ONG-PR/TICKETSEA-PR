@@ -137,7 +137,7 @@ border: 1px dashed; border-color: black;
         box-sizing: border-box;
     }
     .reserve_right{
-/*        border: 4px dashed; border-color: red;*/
+        border: 4px solid; border-color: red;
         width: 30%; height: 100%;
         float: left;
         box-sizing: border-box;
@@ -182,60 +182,27 @@ border: 1px dashed; border-color: black;
     }
     /*-------------------------------------------*/
     .top_info_area{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 28%;
+        border: 5px dashed; border-color: chartreuse;
+        width: 100%; height: 15%;
         box-sizing: border-box;
     }
     
-    .reserve_right>div:nth-child(2){
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 55%;
+    .reserve_artbx{
+        border: 5px dashed; border-color: blue;
+        width: 100%; height: 73%;
         box-sizing: border-box;
     }
-    .reserve_right>div:nth-child(3){
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 5%;
-        box-sizing: border-box;
-    }
+    
     .reserve_btn{
-        border: 1px dashed; border-color: gray;
+        border: 5px dashed; border-color: black;
         width: 100%; height: 12%;
         box-sizing: border-box;
         font-size: 15px;
         text-align: center;
-    }
-    
-    
-    .reserve_right>div:nth-child(2)>.bx_tit{
-        border: 3px dotted; border-color: aqua;
-        width: 100%; height: 25px;
-    }
-    .reserve_right .bx_tit h4{
-/*        border: 3px solid; border-color: blue;*/
-        display: inline;
-        margin: 0;
-    }
-    .reserve_right .bx_tit>a,
-    .reserve_right .bx_tit>p{
-/*        border: 3px dashed; border-color: red;*/
-        float: right; margin: 0;
-        display: inline;
-        font-size: 14px;
-    }
-    #select_seat_grade{
-        border: 3px solid; border-color: blue;
-        margin: 0; padding: 10px;
-        list-style: none;
-    }
-    
-    
-    
-    
-
-
+    } 
 
     .reserve_btn>a{
-/*        border: 1px dashed; border-color: gray;*/
+        border: 1px dashed; border-color: gray;
         width: 50%; height: 100%;
         display: block;
         float: left;
@@ -258,11 +225,10 @@ border: 1px dashed; border-color: black;
                             width:100%;
                             height:100%;
                             display: block;
-                            border:1px solid purple;
+                            border:5px solid; border-color: darkturquoise;
+                            box-sizing: border-box;
                             float:left;
                             background-color: #F3F3F3;
-                            background-color: aqua;
-                            
                         }
                         #ct_left_top{
                             width:95%;
@@ -276,6 +242,12 @@ border: 1px dashed; border-color: black;
 */
                             position: relative;
 /*                            display: none;*/
+                        }
+                        #ct_left_btm{
+                            border: 1px dashed; border-color: black;
+                            width: 100%; height: 55%;
+                            box-sizing: border-box;
+/*                            background-color: aqua;*/
                         }
                         #ct_left_1{
                             width:30%;
@@ -317,33 +289,29 @@ border: 1px dashed; border-color: black;
                             text-align: center;
 /*                            display: none;*/
                         }
-
-                        #content_right{
-                            width:270px;
-                            height:645px;
-                            display: block;
-                            border:1px solid purple;
-                            float:right;
-                        }
                         .title_notice{
                             display: inline-block;
                             font-size:11px;
                             height:14px;
                             line-height: 14px;
                             margin-top:20px;
+                            margin-left: 10px;
                             margin-bottom:7px;
-                            left:15px;top:330px;
-                            display: none;
+/*                            left:15px;top:330px;*/
+/*                            display: none;*/
                         }
                         .notice{
                             width:100%;
                             height:180px;
                             display:block;
+                            padding-left: 10px;
+/*
                             position: absolute;
                             left:-20px; top:360px;
+*/
                             font-size:11px;
                             list-style: none;
-                            display: none;
+/*                            display: none;*/
                         }
                     </style>         
                     <!--------------------------------------->
@@ -360,13 +328,14 @@ border: 1px dashed; border-color: black;
                         <div id="ct_left_btm">
                             <strong class="title_notice"><em></em>티켓예매시 참고사항</strong>
                             <ul class="notice">
-                            <li>- 장애인, 국가유공자 할인등급의 경우 현장 수령만 가능합니다. <br>장애인 등록증이나 복지카드 증빙 후 티켓을 수령하실 수 있습니다. 미지참시 할인 혜택을 받으실 수 없으며, 차액만큼 지불하셔야 합니다.</li>
-                            <li>- 관람일 하루 전 오후5시까지 취소 가능합니다.<br>평일/주말/공유 일일 경우는 17시까지, 토요일일 경우는 11시까지 가능합니다.</li>
-                            <li>- 예매시 결제방법을 무통장입금으로 선택하시면, 입금 가능한 은행명, 계좌번호, 입금 마감일을 알려드립니다.<br>입금 마감 시간은 은행별로 상이할 수 있습니다. 또한, ATM 이용 시 입금이 불가능할 수 있습니다.<br>예매
-                                금액과 입금 금액이 일치하지 않을 경우 입금 오류가 발생하여 입금 처리가 되지 않습니다. 예매시 예매 금액을 꼭 확인하세요.
-                            </li>
-                            <li>- 신용카드 단일 결제 시 부분 취소가 가능합니다.<br>단, 문화누리카드 및 일부 직불카드는 부분 취소가 불가능 합니다.</li>
-                        </ul>
+                                <li>- 장애인, 국가유공자 할인등급의 경우 현장 수령만 가능합니다. <br>장애인 등록증이나 복지카드 증빙 후 티켓을 수령하실 수 있습니다. 미지참시 할인 혜택을 받으실 수 없으며, 차액만큼 지불하셔야 합니다.</li>
+                                <li>- 관람일 하루 전 오후5시까지 취소 가능합니다.<br>평일/주말/공유 일일 경우는 17시까지, 토요일일 경우는 11시까지 가능합니다.
+                                </li>
+                                <li>- 예매시 결제방법을 무통장입금으로 선택하시면, 입금 가능한 은행명, 계좌번호, 입금 마감일을 알려드립니다.<br>입금 마감 시간은 은행별로 상이할 수 있습니다. 또한, ATM 이용 시 입금이 불가능할 수 있습니다.<br>예매
+                                    금액과 입금 금액이 일치하지 않을 경우 입금 오류가 발생하여 입금 처리가 되지 않습니다. 예매시 예매 금액을 꼭 확인하세요.
+                                </li>
+                                <li>- 신용카드 단일 결제 시 부분 취소가 가능합니다.<br>단, 문화누리카드 및 일부 직불카드는 부분 취소가 불가능 합니다.</li>
+                            </ul>
                         </div>
                     </div>
                     <!--------------------------------------->
@@ -374,60 +343,14 @@ border: 1px dashed; border-color: black;
                     <!--------------------------------------->
                 </div>
                 <div class="reserve_right ng-isolate-scope">
-                    <div class="top_info_area map_area" id="minimap_view" style="text-align: left; padding-left: 18px;">
-
-                        <!-- 좌석 선택 미니맵 구현 부분 -->
+                    <div class="top_info_area" id="show_info" style="text-align: left; padding-left: 18px;">
+                        공연포스터 & 공연명
                     </div>
+                    
                     <div class="reserve_artbx ng-isolate-scope">
-                        <div class="bx_tit">
-                            <h4 class="reserve_tit seat_select ng-binding">등급 선택</h4>
-                            <a href="#" class="btn_refresh ng-binding" ng-click="select.clearGradeAndBlock()">새로고침</a>
-                        </div>
-                        <ul id="select_seat_grade" class="seat_lst" style="height:258px">
-                            <li ng-click="select.total()">
-                                <a href="#" ng-class="{
-                                       select: !select.selectState.selectedGrade
-                                   }" style="cursor:pointer" class="select">
-                                    <span class="seat_color"></span>
-                                    <div class="seat_detail_info">
-                                        <span class="seat_level ng-binding">전체</span>
-                                    </div>
-                                </a>
-                            </li>
-                            
-                            <!--좌석등급 별 list-->
-                            <li id="seat_grade_33625" depth="1" grade="grade" zones="grade.zones" selected="selected" ng-if="!grade.restriction" ng-click="select.select($event, $index, grade)" ng-mouseover="select.showTooltipAction($event,grade)" ng-mouseleave="select.hideTooltipAction($event)" ng-init="select.selectedList[$index] = select.selectState.selectedGrade.gradeId === grade.gradeId|| false" ng-repeat="grade in select.grades" class="ng-scope ng-isolate-scope">
-                                <!-- [D] 좌석 선택된 경우 클래스명 select 추가, 구역이 선택된 경우엔 클래스명 select2로 변경 -->
-                                <a href="#" style="cursor:pointer" ng-class="{
-                                       select: grade.selected === true,
-                                       zero: grade.grade.remainCnt === 0
-                                   }">
-                                    <span class="seat_color ng-scope" style="background:#ffc000" ng-style="{
-                                        background:grade.grade.color
-                                      }" ng-if="grade.grade.color !== undefined"></span>
-                                    <div class="seat_detail_info">
-                                        <span class="seat_grade ng-binding ng-scope" ng-if="grade.depth === 1">VIP석</span>
-                                        <span class="seat_price ng-binding ng-scope" ng-if="grade.isPriceExposure &amp;&amp; grade.grade.price !== undefined">
-                                            140,000원</span>
-                                        <span class="seat ng-binding ng-scope" ng-if="grade.isRemainExposure &amp;&amp; grade.grade.remainCnt !== undefined">
-                                            <span class="ng-binding">22</span>
-                                            석
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-
-                        </ul>
+                        예매 정보 출력란
                     </div>
-                    <div class="reserve_artbx ng-isolate-scope">
-                        <div class="bx_tit">
-                            <h4 class="reserve_tit ng-binding ng-hide" ng-show="select.isBtnShow()">좌석 선택</h4>
-                            <p class="reserve_notice_ly ng-binding ng-scope" ng-click="select.showNotice=!select.showNotice" ng-if="select.hasReserveCommissionContent">
-                                <span class="sp"></span>
-                                좌석선점 및 자동배정 안내
-                            </p>
-                        </div>
-                    </div>
+                    
                     <div class="reserve_btn">
                         <a href="#" style="cursor:pointer" class="btn reserve_prev ng-binding" ng-click="right.prev()"><span>이전단계</span></a>
                         <a href="#" class="btn ng-binding reserve_next3" style="cursor:pointer" ng-class="{
