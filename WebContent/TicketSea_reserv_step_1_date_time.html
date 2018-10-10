@@ -19,6 +19,12 @@
 
     <div id="wrap_reserve">
         <div id="header">
+
+            
+<!-- 외부 스타일 시트 적용 -->
+<link href="css/TicketSea_reserv_step_1.css" rel="stylesheet" type="text/css">
+<!-- style -->
+<!--
 <style>
     .reserve_title{
         border: 1px dashed; border-color: black;
@@ -68,41 +74,9 @@ border: 1px dashed; border-color: black;
         display: inline-grid;
         align-items: center;
     }
-</style>
-            <div class="reserve_title">
-                <h1>TicketSea</h1>
-                <h2>예매</h2>
-            </div>
-            <ul class="reserve_step ng-isolate-scope" ng-class="bar.version" step="plan" product-type-code="product.productTypeCode" product-class-type="product.productClassType">
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step1" ng-class="isOn(element)">
-                    <span class="ng-binding">날짜/회차선택</span>  
-                </li>
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step2 on" ng-class="isOn(element)">
-                    <span class="ng-binding">등급/좌석선택</span>  
-                </li>
-                
-<!--
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step3" ng-class="isOn(element)">
-                    <span class="ng-binding">권종/할인/매수선택</span>  
-                </li>
--->
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step4" ng-class="isOn(element)">    
-                    <span class="ng-binding">배송선택/예매확인</span>  
-                </li>
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step5" ng-class="isOn(element)">    
-                    <span class="ng-binding">결제</span>  
-                </li>
-                
-            </ul>
-        </div>
-<!----------------------------------------------------------->
-<!------->
-<style>
-/*    div{ border: 1px dotted; border-color: darkgray;}*/
+    
+    
+    /*    div{ border: 1px dotted; border-color: darkgray;}*/
     
     #wrap_reserve{
         border: 5px dotted; border-color: gray;
@@ -214,108 +188,135 @@ border: 1px dashed; border-color: black;
         align-items: center;
     }
     
-</style>
-        <div id="container" class="ng-isolate-scope">
-            <div class="reserve_content">
-                <div class="reserve_left ng-isolate-scope">
-                    <!--------------------------------------->
-                    <!--------------------------------------->
-                    <style>
-                        #content_left{
-                            width:100%;
-                            height:100%;
-                            display: block;
-                            border:5px solid; border-color: darkturquoise;
-                            box-sizing: border-box;
-                            float:left;
-                            background-color: #F3F3F3;
-                        }
-                        #ct_left_top{
-                            width:95%;
-                            height:45%;
-                            margin-left: 2.5%;
-                            background-color: white;
-                            display: block;
+    #content_left{
+        width:100%;
+        height:100%;
+        display: block;
+        border:5px solid; border-color: darkturquoise;
+        box-sizing: border-box;
+        float:left;
+        background-color: #F3F3F3;
+    }
+    #ct_left_top{
+        width:95%;
+        height:45%;
+        margin-left: 2.5%;
+        background-color: white;
+        display: block;
 /*
-                            position: absolute;
-                            left:15px; top:15px;
+        position: absolute;
+        left:15px; top:15px;
 */
-                            position: relative;
+        position: relative;
 /*                            display: none;*/
-                        }
-                        #ct_left_btm{
-                            border: 1px dashed; border-color: black;
-                            width: 100%; height: 55%;
-                            box-sizing: border-box;
+    }
+    #ct_left_btm{
+        border: 1px dashed; border-color: black;
+        width: 100%; height: 55%;
+        box-sizing: border-box;
 /*                            background-color: aqua;*/
-                        }
-                        #ct_left_1{
-                            width:30%;
-                            height:90%;
+    }
+    #ct_left_1{
+        width:30%;
+        height:90%;
 /*                            margin-top: 5%;*/
-                            display: block;
-                            position: relative;
-                            background-color:#F3F3F3;
-                            float: left;
-                            margin-left: 2.5%;
-                            margin-right: 2.5%;
+        display: block;
+        position: relative;
+        background-color:#F3F3F3;
+        float: left;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
 /*
-                            left:15px;top:20px;
-                            position: absolute;
+        left:15px;top:20px;
+        position: absolute;
 */
-                            text-align: center;
+        text-align: center;
 /*                            display: none;*/
-                        }
-                        #ct_left_2{
-                            width:30%;
-                            height:90%;
-                            background-color:#F3F3F3;
+    }
+    #ct_left_2{
+        width:30%;
+        height:90%;
+        background-color:#F3F3F3;
 /*                            position: absolute;*/
 /*                            left:290px;top:20px;*/
-                            float:left;
-                            margin-right: 2.5%;
-                            text-align: center;
+        float:left;
+        margin-right: 2.5%;
+        text-align: center;
 /*                            display: none;*/
-                        }
-                        #ct_left_3{
-                            width:30%;
-                            height:90%;
-                            background-color:#F3F3F3;
-                            float: left;
+    }
+    #ct_left_3{
+        width:30%;
+        height:90%;
+        background-color:#F3F3F3;
+        float: left;
 /*
-                            position: absolute;
-                            left:485px;top:20px;
+        position: absolute;
+        left:485px;top:20px;
 */
-                            text-align: center;
+        text-align: center;
 /*                            display: none;*/
-                        }
-                        .title_notice{
-                            display: inline-block;
-                            font-size:11px;
-                            height:14px;
-                            line-height: 14px;
-                            margin-top:20px;
-                            margin-left: 10px;
-                            margin-bottom:7px;
+    }
+    .title_notice{
+        display: inline-block;
+        font-size:11px;
+        height:14px;
+        line-height: 14px;
+        margin-top:20px;
+        margin-left: 10px;
+        margin-bottom:7px;
 /*                            left:15px;top:330px;*/
 /*                            display: none;*/
-                        }
-                        .notice{
-                            width:100%;
-                            height:180px;
-                            display:block;
-                            padding-left: 10px;
+    }
+    .notice{
+        width:100%;
+        height:180px;
+        display:block;
+        padding-left: 10px;
 /*
-                            position: absolute;
-                            left:-20px; top:360px;
+        position: absolute;
+        left:-20px; top:360px;
 */
-                            font-size:11px;
-                            list-style: none;
+        font-size:11px;
+        list-style: none;
 /*                            display: none;*/
-                        }
-                    </style>         
-                    <!--------------------------------------->
-                    <!--------------------------------------->
+    }
+</style>
+-->
+            <div class="reserve_title">
+                <h1>TicketSea</h1>
+                <h2>예매</h2>
+            </div>
+            <ul class="reserve_step ng-isolate-scope" ng-class="bar.version" step="plan" product-type-code="product.productTypeCode" product-class-type="product.productClassType">
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step1" ng-class="isOn(element)">
+                    <span class="ng-binding">날짜/회차선택</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step2 on" ng-class="isOn(element)">
+                    <span class="ng-binding">등급/좌석선택</span>  
+                </li>
+                
+<!--
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step3" ng-class="isOn(element)">
+                    <span class="ng-binding">권종/할인/매수선택</span>  
+                </li>
+-->
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step4" ng-class="isOn(element)">    
+                    <span class="ng-binding">배송선택/예매확인</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step5" ng-class="isOn(element)">    
+                    <span class="ng-binding">결제</span>  
+                </li>
+                
+            </ul>
+        </div>
+<!----------------------------------------------------------->
+
+        <div id="container" class="ng-isolate-scope">
+            <div class="reserve_content">
+                <div class="reserve_left">
                     <div id="content_left">
                         <div id="ct_left_top">
                             <div id="ct_left_1">
@@ -342,7 +343,7 @@ border: 1px dashed; border-color: black;
                     <!--------------------------------------->
                     <!--------------------------------------->
                 </div>
-                <div class="reserve_right ng-isolate-scope">
+                <div class="reserve_right">
                     <div class="top_info_area" id="show_info" style="text-align: left; padding-left: 18px;">
                         공연포스터 & 공연명
                     </div>
