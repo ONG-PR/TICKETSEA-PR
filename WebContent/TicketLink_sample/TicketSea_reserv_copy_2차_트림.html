@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html
+lang="ko"
+ng-app="defaultApp"
+class="customevent no-contextmenu canvas canvastext contenteditable canvaswinding todataurljpeg todataurlpng todataurlwebp ng-scope">
+    
+    
+<head>
+    <meta charset="utf-8">
+    <title>티켓링크 예매</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="http://ticketlink.dn.toastoven.net/web/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="//tketlink.dn.toastoven.net/markup_resources/2018091803/web/css/common.css">
+    
+    <link rel="stylesheet" type="text/css" href="//tketlink.dn.toastoven.net/markup_resources/2018091803/web/css/reserve.css">
+    
+</head>
+    
+<body ng-controller="defaultCtrl" class="ng-scope">
+
+    <div id="wrap_reserve">        
+        <div id="header">
+            <div class="reserve_title">
+                <h1>티켓링크</h1>
+                <h2>예매</h2>
+            </div>
+            <ul class="reserve_step ng-isolate-scope" ng-class="bar.version" step="plan" product-type-code="product.productTypeCode" product-class-type="product.productClassType">
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step1" ng-class="isOn(element)">
+                    <span class="ng-binding">날짜/회차선택</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step2 on" ng-class="isOn(element)">
+                    <span class="ng-binding">등급/좌석선택</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step3" ng-class="isOn(element)">
+                    <span class="ng-binding">권종/할인/매수선택</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step4" ng-class="isOn(element)">    
+                    <span class="ng-binding">배송선택/예매확인</span>  
+                </li>
+                
+                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step5" ng-class="isOn(element)">    
+                    <span class="ng-binding">결제</span>  
+                </li>
+                
+            </ul>
+        </div>
+        <div id="container" class="ng-isolate-scope">
+            <div class="reserve_content">
+                <div class="reserve_left ng-isolate-scope">
+                    <div class="reserve_prdt_info">
+                        <p class="etc_info">
+                            <span class="date ng-binding">2018.10.16(화) 20:00</span>
+                            <span class="place ng-binding">!!! 공연장명 !!!</span>
+                        </p>
+                        <div class="tit" ng-mouseover="left.showTitleTooltip = true" ng-mouseleave="left.showTitleTooltip = false">
+                            <h4 class="prdt ng-binding">!!! 공연명 !!!</h4>
+                        </div>
+                    </div>
+                    <div id="main_view_top" class="select_seat ng-isolate-scope">
+                        <div id="main_view" class="in" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                            <!-- 좌석 선택 구현 부분 -->
+                        </div>
+                        <div class="select_seat_info ng-isolate-scope" ng-init="showSelectedSeatInfo = false" style="z-index: 20;;z-index: 20;">
+                            <a href="#" class="seat_header" ng-class="{open: showSelectedSeatInfo}" ng-click="showSelectedSeatInfo = !showSelectedSeatInfo">
+                                <strong class="tit ng-binding ng-scope" ng-if="selected.isSelfShow()">좌석 선택 해달라는 문구 넣는 부분</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reserve_right ng-isolate-scope">
+                    <div class="top_info_area map_area" id="minimap_view" style="text-align: left; padding-left: 18px;">
+
+                        <!-- 좌석 선택 미니맵 구현 부분 -->
+                    </div>
+                    <div class="reserve_artbx ng-isolate-scope">
+                        <div class="bx_tit">
+                            <h4 class="reserve_tit seat_select ng-binding">등급 선택</h4>
+                            <a href="#" class="btn_refresh ng-binding" ng-click="select.clearGradeAndBlock()">새로고침</a>
+                        </div>
+                        <ul id="select_seat_grade" class="seat_lst" style="height:258px">
+                            <li ng-click="select.total()">
+                                <a href="#" ng-class="{
+                                       select: !select.selectState.selectedGrade
+                                   }" style="cursor:pointer" class="select">
+                                    <span class="seat_color"></span>
+                                    <div class="seat_detail_info">
+                                        <span class="seat_level ng-binding">전체</span>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <!--좌석등급 별 list-->
+                            <li id="seat_grade_33625" depth="1" grade="grade" zones="grade.zones" selected="selected" ng-if="!grade.restriction" ng-click="select.select($event, $index, grade)" ng-mouseover="select.showTooltipAction($event,grade)" ng-mouseleave="select.hideTooltipAction($event)" ng-init="select.selectedList[$index] = select.selectState.selectedGrade.gradeId === grade.gradeId|| false" ng-repeat="grade in select.grades" class="ng-scope ng-isolate-scope">
+                                <!-- [D] 좌석 선택된 경우 클래스명 select 추가, 구역이 선택된 경우엔 클래스명 select2로 변경 -->
+                                <a href="#" style="cursor:pointer" ng-class="{
+                                       select: grade.selected === true,
+                                       zero: grade.grade.remainCnt === 0
+                                   }">
+                                    <span class="seat_color ng-scope" style="background:#ffc000" ng-style="{
+                                        background:grade.grade.color
+                                      }" ng-if="grade.grade.color !== undefined"></span>
+                                    <div class="seat_detail_info">
+                                        <span class="seat_grade ng-binding ng-scope" ng-if="grade.depth === 1">VIP석</span>
+                                        <span class="seat_price ng-binding ng-scope" ng-if="grade.isPriceExposure &amp;&amp; grade.grade.price !== undefined">
+                                            140,000원</span>
+                                        <span class="seat ng-binding ng-scope" ng-if="grade.isRemainExposure &amp;&amp; grade.grade.remainCnt !== undefined">
+                                            <span class="ng-binding">22</span>
+                                            석
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="reserve_artbx ng-isolate-scope">
+                        <div class="bx_tit">
+                            <h4 class="reserve_tit ng-binding ng-hide" ng-show="select.isBtnShow()">좌석 선택</h4>
+                            <p class="reserve_notice_ly ng-binding ng-scope" ng-click="select.showNotice=!select.showNotice" ng-if="select.hasReserveCommissionContent">
+                                <span class="sp"></span>
+                                좌석선점 및 자동배정 안내
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reserve_btn">
+                        <a href="#" style="cursor:pointer" class="btn reserve_prev ng-binding" ng-click="right.prev()">이전단계</a>
+                        <a href="#" class="btn ng-binding reserve_next3" style="cursor:pointer" ng-class="{
+                                reserve_next2 : !right.isNextDisabled(),
+                                reserve_next3 : right.isNextDisabled()
+                           }" ng-click="right.next()">다음단계</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
