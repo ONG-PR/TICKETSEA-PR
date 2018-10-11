@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#wrap_reserve{}
+
+#header{}
+
+#container{}
+
+/*---------------------- header ----------------------*/
+.reserve_title{}
+
+.reserve_title h1{}
+
+.reserve_title h2{}
+
+.reserve_step{}
+.reserve_step li{}
+.reserve_step li span{}
+/*---------------------- /header ----------------------*/
+/*---------------------- container ----------------------*/
+
+.reserve_content{}
+.reserve_left{}
+.reserve_right{}
+
+/*--------- reserve_left ---------*/
+/*각 스텝에 따른 스타일 적용*/
+/*--------- /reserve_left ---------*/
+/*--------- reserve_right ---------*/
+
+
+
+.reserve_btn{}
+/*--- reserve_btn ---*/
+.reserve_btn>a{}
+.reserve_btn>a>span{}
+/*--- /reserve_btn ---*/
+
+/*--------- /reserve_right ---------*/
+
+/*---------------------- /container ----------------------*/
+
