@@ -3,25 +3,19 @@
 <head>
     <meta charset="utf-8">
     <title>티켓링크 예매</title>
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
     
     <link rel="shortcut icon" type="image/x-icon" href="http://ticketlink.dn.toastoven.net/web/favicon.ico">
     
-<!--
-    <link rel="stylesheet" type="text/css" href="//tketlink.dn.toastoven.net/markup_resources/2018091803/web/css/common.css">
-    
-    <link rel="stylesheet" type="text/css" href="//tketlink.dn.toastoven.net/markup_resources/2018091803/web/css/reserve.css">
--->
-    
 </head>
     
-<body ng-controller="defaultCtrl" class="ng-scope">
+<body>
 
     <div id="wrap_reserve">
         <div id="header">
 
             
 <!-- 외부 스타일 시트 적용 -->
+<link href="css/TicketSea_reserv_common.css" rel="stylesheet" type="text/css">
 <link href="css/TicketSea_reserv_step_1.css" rel="stylesheet" type="text/css">
 <!-- style -->
 <!--
@@ -286,27 +280,21 @@ border: 1px dashed; border-color: black;
                 <h1>TicketSea</h1>
                 <h2>예매</h2>
             </div>
-            <ul class="reserve_step ng-isolate-scope" ng-class="bar.version" step="plan" product-type-code="product.productTypeCode" product-class-type="product.productClassType">
+            <ul class="reserve_step">
                 
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step1" ng-class="isOn(element)">
+                <li class="step1">
                     <span class="ng-binding">날짜/회차선택</span>  
                 </li>
                 
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step2 on" ng-class="isOn(element)">
+                <li class="step2 on" ng-class="isOn(element)">
                     <span class="ng-binding">등급/좌석선택</span>  
                 </li>
                 
-<!--
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step3" ng-class="isOn(element)">
-                    <span class="ng-binding">권종/할인/매수선택</span>  
-                </li>
--->
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step4" ng-class="isOn(element)">    
+                <li class="step4">    
                     <span class="ng-binding">배송선택/예매확인</span>  
                 </li>
                 
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step5" ng-class="isOn(element)">    
+                <li class="step5" ng-class="isOn(element)">    
                     <span class="ng-binding">결제</span>  
                 </li>
                 
@@ -348,16 +336,13 @@ border: 1px dashed; border-color: black;
                         공연포스터 & 공연명
                     </div>
                     
-                    <div class="reserve_artbx ng-isolate-scope">
+                    <div class="reserve_artbx">
                         예매 정보 출력란
                     </div>
                     
                     <div class="reserve_btn">
-                        <a href="#" style="cursor:pointer" class="btn reserve_prev ng-binding" ng-click="right.prev()"><span>이전단계</span></a>
-                        <a href="#" class="btn ng-binding reserve_next3" style="cursor:pointer" ng-class="{
-                                reserve_next2 : !right.isNextDisabled(),
-                                reserve_next3 : right.isNextDisabled()
-                           }" ng-click="right.next()"><span>다음단계</span></a>
+                        <a href="#" style="cursor:pointer" class="btn"><span>이전단계</span></a>
+                        <a href="#" class="btn" style="cursor:pointer"><span>다음단계</span></a>
                     </div>
 
                 </div>
