@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>티켓링크 예매</title>
     
-    <link rel="shortcut icon" type="image/x-icon" href="http://ticketlink.dn.toastoven.net/web/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="">
     
 </head>
     
@@ -15,324 +15,39 @@
             
             
 <!-- 외부 스타일 시트 적용 -->
-<link href="css/TicketSea_reserv_common.css" rel="stylesheet" type="text/css">
-<link href="css/TicketSea_reserv_step_3.css" rel="stylesheet" type="text/css">
-<!-- style -->
-<!--
-<style>
-    .reserve_title{
-        border: 1px dashed; border-color: black;
-        width: 100%; height: 60%;
-        box-sizing: border-box;
-        padding:13px 2px 15px 30px;
-        font-size:0px;
-    }
-    
-    .reserve_title h1{
-        border: 1px dashed; border-color: red;
-        width:77px; height:28px;
-        margin-right:2px;
-        vertical-align:middle;
-        display:inline-block;
-        font-size: 17px;
-    }
-    
-    .reserve_title h2{
-        border: 1px dashed; border-color: blue;
-        width:29px; height:17px;
-        vertical-align:middle;
-        font-size: 13px;
-        display:inline-block;
-    }
-    .reserve_step{
-border: 1px dashed; border-color: black;
-        width: 100%; height: 40%;
-        box-sizing: border-box;
-        display: block;
-        font-size: 0px;
-        margin: 0; padding: 0;
-    }
-    .reserve_step li{
-border: 1px dashed; border-color: black;
-        width: 25%; height: 100%;
-        box-sizing: border-box;
-        display: inline-block;
-        font-size: 15px;
-        text-align: center;
-        margin: 0
-    }
-    .reserve_step li span{
-/*border: 1px dashed; border-color: black;*/
-        width: 100%; height: 100%;
-        box-sizing: border-box;
-        display: inline-grid;
-        align-items: center;
-    }
-</style>
--->
+<link href="./css/TicketSea_reserv_common.css" rel="stylesheet" type="text/css">
+<link href="./css/TicketSea_reserv_step_3.css" rel="stylesheet" type="text/css">
+
             <div class="reserve_title">
-                <input type="image" src="img/logo.png" alt="로고" height="100%" width="12%"/>
-                <h2 text-align="center">예매</h2>
+                <h1>TicketSea</h1>
+                <h2>예매</h2>
             </div>
-            <ul class="reserve_step ng-isolate-scope" ng-class="bar.version" step="plan" product-type-code="product.productTypeCode" product-class-type="product.productClassType">
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step1" ng-class="isOn(element)">
+            <ul class="reserve_step">
+                <li class="step1">
                     <span class="ng-binding">날짜/회차선택</span>  
                 </li>
                 
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step2 on" ng-class="isOn(element)">
+                <li class="step2 on">
                     <span class="ng-binding">등급/좌석선택</span>  
                 </li>
-                
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step4" ng-class="isOn(element)">    
+       
+                <li class="step4">    
                     <span class="ng-binding">배송선택/예매확인</span>  
                 </li>
                 
-                <li ng-repeat="element in bar.elements" ng-if="element.isExposed" class="step5" ng-class="isOn(element)">    
+                <li class="step5">    
                     <span class="ng-binding">결제</span>  
                 </li>
                 
             </ul>
         </div>
-<!----------------------------------------------------------->
-
-<!-- style -->
-<!--
-<style>
-/*    div{ border: 1px dotted; border-color: darkgray;}*/
-    
-    #wrap_reserve{
-        border: 5px dotted; border-color: gray;
-        position:relative;
-        width:990px; height:100%;
-    }
-    
-    #header{
-/*        border: 3px solid; border-color: red;*/
-        position:fixed;
-        width:990px; height: 100px;
-        box-sizing: border-box;
-/*        background-color: aquamarine;*/
-    }
-    #container{
-/*        border: 3px solid; border-color: blue;*/
-        width: 100%; height: 600px;
-        position: relative;
-        padding-top: 100px;
-        box-sizing: border-box;
-/*        background-color: aquamarine;*/
-    }
-    .reserve_content{
-/*        border: 1px solid; border-color: chartreuse;*/
-        width: 100%; height: 100%;
-        box-sizing: border-box;
-    }
-     .reserve_left {
-         box-sizing: border-box;
-            overflow-y: auto;
-            float: left;
-            position: relative;
-            width: 70%; height: 100%;
-            padding: 20px;
-            border-right: 1px solid #dedede;
-            background: #f4f4f4;
-            font-size: 12px;
-        }
-    .reserve_right{
-/*        border: 4px dashed; border-color: red;*/
-        width: 30%; height: 100%;
-        float: left;
-        box-sizing: border-box;
-    }
-    .reserve_prdt_info{
-/*        border: 1px solid; border-color: cyan;*/
-        width: 100%; height: 10%;
-        box-sizing: border-box;
-    }
-    .title{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 100%;
-        box-sizing: border-box;
-        font-size: 22px;
-        line-height: 230%;
-        padding: 0;
-    }
-    .prdt{
-        border: 1px dotted; border-color: grey;
-        margin: 0;
-        width: 100%; height: 100%;
-        box-sizing: border-box;        
-    }
-    .etc_info{
-        border: 1px dotted; border-color: gray;
-        float: right;
-    }
-    #main_view_top{
-        border: 1px solid; border-color: gray;
-        width: 100%; height: 90%;
-        box-sizing: border-box;
-    }
-    #main_view{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 90%;
-        box-sizing: border-box;
-    }
-    .select_seat_info{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 10%;
-        box-sizing: border-box;
-    }
-    /*-------------------------------------------*/
-    .top_info_area{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 28%;
-        box-sizing: border-box;
-    }
-    
-    .reserve_right>div:nth-child(2){
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 55%;
-        box-sizing: border-box;
-    }
-    .reserve_right>div:nth-child(3){
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 5%;
-        box-sizing: border-box;
-    }
-    .reserve_btn{
-        border: 1px dashed; border-color: gray;
-        width: 100%; height: 12%;
-        box-sizing: border-box;
-        font-size: 15px;
-        text-align: center;
-    }
-    
-    
-    .reserve_right>div:nth-child(2)>.bx_tit{
-        border: 3px dotted; border-color: aqua;
-        width: 100%; height: 25px;
-    }
-    .reserve_right .bx_tit h4{
-/*        border: 3px solid; border-color: blue;*/
-        display: inline;
-        margin: 0;
-    }
-    .reserve_right .bx_tit>a,
-    .reserve_right .bx_tit>p{
-/*        border: 3px dashed; border-color: red;*/
-        float: right; margin: 0;
-        display: inline;
-        font-size: 14px;
-    }
-    #select_seat_grade{
-        border: 3px solid; border-color: blue;
-        margin: 0; padding: 10px;
-        list-style: none;
-    }
-    
-    
-    
-    
-
-
-
-    .reserve_btn>a{
-/*        border: 1px dashed; border-color: gray;*/
-        width: 50%; height: 100%;
-        display: block;
-        float: left;
-        box-sizing: border-box;
-    }
-    .reserve_btn>a>span{
-        width: 100%; height: 100%;
-        display: inline-grid;
-        align-items: center;
-    }
-    
-        .reserve_left .reserve_step3 .title {
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .reserve_left .reserve_step3 table {
-            width: 100%;
-            background: #fff;
-            letter-spacing: 0;
-        }
-       caption {
-            visibility: hidden;
-            overflow: hidden;
-            width: 0;
-            height: 0;
-            font-size: 0;
-            line-height: 0;
-        }
-        /*tbody {
-            display: table-row-group;
-            vertical-align: middle;
-            border-color: inherit;
-        }*/
-        /*tr {
-            display: table-row;
-            vertical-align: inherit;
-            border-color: inherit;
-        }
-        */
-        .color_red {
-            color: #ec2f09 !important;
-        }
-        .blind {
-            display: block;
-            visibility: hidden;
-            overflow: hidden;
-            position: absolute;
-            top: -1000em;
-            left: 0;
-        }
-        td .input_block {
-            margin: 10px 0;
-        }
-        input[type=text].input, input[type=password].input {
-            border: 1px solid #bebebe;
-            padding: 1px 10px;
-            height: 24px;
-            line-height: 100%;
-            vertical-align: middle;
-        }
-        .customer_check .input_block_lst {
-            margin-top: 0;
-            border: 1px solid #dedede;
-            padding: 0px;
-        }
-        /*.customer_check .input_block_lst .checkbox {
-            top: 50%;
-            left: 19px;
-            margin-top: -8px;
-        }*/
-        .input_block_lst label {
-            line-height: 17px;
-        }
-        .customer_check .input_block_lst li {
-            /*position: relative;*/
-            margin-top: 0;
-            padding: 13px 19px 12px 25px;
-            border-top: 1px solid #dedede;
-            background-color: #fff;
-            list-style: none;
-        }
-        .title{
-            margin-top: 20px;
-        }
-       
-    
-</style>
--->
         <div id="container" class="ng-isolate-scope">
-            <div class="reserve_content">
+            <div class="reserve_content3">
                 <div class="reserve_left">
                     <div class="reserve_step3">
-                    <strong class="title ticket_delivery2"><span>주문자 확인</span></strong>
+                    <strong class="title"><span>주문자 확인</span></strong>
                     <div class="white_box">
-                        <table class="table2 table2_v2">
+                        <table class="table2">
                             <caption>주문자 확인</caption>
                             <colgroup>
                                 <col style="width:86px;">
@@ -342,21 +57,21 @@ border: 1px dashed; border-color: black;
                             </colgroup>
                             <tbody>
                             <tr>
-                                <th scope="row" class="th fbold">이름 <span class="color_red">*<span class="blind">필수입력란</span></span></th>
+                                <th class="th fbold">이름 <span class="color_red">*<span class="blind">필수입력란</span></span></th>
                                 <td class="ng-binding">주문자 이름</td>
-                                <th scope="row" class="th fbold">휴대폰 번호 <span class="color_red">*<span class="blind">필수입력란</span></span></th>
+                                <th class="th fbold">휴대폰 번호 <span class="color_red">*<span class="blind">필수입력란</span></span></th>
                                 <td>
                                     <div class="input_block">
-                                        <input type="text" class="input ng-pristine ng-untouched ng-valid input-disabled ng-empty ng-valid-maxlength"  style="width:180px" maxlength="11" title="휴대폰 번호" number-text-box="" ng-model="reserve.reserveCellPhoneNo">
+                                        <input type="text" class="input"  style="width:180px" maxlength="11" title="휴대폰 번호" number-text-box="">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" class="th fbold">이메일 <!-- ngIf: reserve.emailNeedYn == 'Y' -->
+                                <th class="th fbold">이메일
                                 </th>
                                 <td colspan="3">
                                     <div class="input_block">
-                                        <input type="text" name="reserveEmail" class="input ng-pristine ng-untouched ng-valid ng-not-empty" style="width:517px" title="이메일" ng-keypress="fn.delivery.checkUppercase($event, 'E-mail')" ng-model="reserve.reserveEmail">
+                                        <input type="text" name="reserveEmail" class="input" style="width:517px" title="이메일">
                                     </div>
                                 </td>
                             </tr>
@@ -364,21 +79,21 @@ border: 1px dashed; border-color: black;
                         </table>
                     </div>
                 </div>
-        <div class="reserve_step3 customer_check">
+        <div class="reserve_step3">
                     <strong class="title"><span class="sp">예매자 확인</span></strong>
                     <ul class="input_block_lst">
                         <li>
-                            <span class="checkbox checked" ng-init="agreeTerm1 = false" ng-class="{'checked' : agreeTerm1}" ng-click="agreeTerm1 = !agreeTerm1">
+                            <span class="checkbox checked">
                                 <input type="checkbox" id="agree_phone" name="agree_phone">
                             </span>
-                            <label for="agree_phone">주문자 확인 및 예매처리를 위해 휴대폰번호, 이메일, (배송수령 시)주소, (입력필요 시)생년월일을 수집하며, <br>이용목적 달성 이후 파기합니다.</label>
+                            <label for="agree_phone">주문자 확인 및 예매처리를 위해 휴대폰번호, 이메일, (배송수령 시)주소, (입력필요 시) 생년월일을 수집하며, 이용목적 달성 이후 파기합니다.</label>
                         </li>
                         <li>
-                            <span class="checkbox" ng-class="{checked : confirm2}" ng-click="confirm2 = !confirm2">
-					            <input type="checkbox" id="reserve_agree2" name="reserve_agree2" ng-value="confirm3" value="false">
+                            <span class="checkbox">
+					            <input type="checkbox" id="reserve_agree2" name="reserve_agree2" value="false">
                             </span>
                             <label for="reserve_agree2">개인정보 제 3자 제공에 동의합니다. (고객응대 및 관람정보안내 등을 위함)</label>
-                            <a href="#" class="link_green confirm-open" ng-init="common.showConfirmFlag = false" ng-click="common.showConfirmFlag = !common.showConfirmFlag">[상세보기]</a>
+                            <a href="#" class="link_green" >[상세보기]</a>
                         </li>
                     </ul>
                 </div>
@@ -386,43 +101,36 @@ border: 1px dashed; border-color: black;
                     <!--------------------------------------->
                     <!--------------------------------------->
                 </div>
-                <div class="reserve_right ng-isolate-scope">
-                    <div class="top_info_area map_area" id="minimap_view" style="text-align: left; padding-left: 18px;">
+                <div class="reserve_right">
+                    <div class="top_info_area" id="minimap_view" style="text-align: left; padding-left: 18px;">
 
                         <!-- 좌석 선택 미니맵 구현 부분 -->
                     </div>
-                    <div class="reserve_artbx ng-isolate-scope">
+                    <div class="reserve_artbx">
                         <div class="bx_tit">
-                            <h4 class="reserve_tit seat_select ng-binding">등급 선택</h4>
-                            <a href="#" class="btn_refresh ng-binding" ng-click="select.clearGradeAndBlock()">새로고침</a>
+                            <h4 class="reserve_tit">등급 선택</h4>
+                            <a href="#" class="btn_refresh">새로고침</a>
                         </div>
                         <ul id="select_seat_grade" class="seat_lst" style="height:258px">
-                            <li ng-click="select.total()">
-                                <a href="#" ng-class="{
-                                       select: !select.selectState.selectedGrade
-                                   }" style="cursor:pointer" class="select">
+                            <li>
+                                <a href="#" style="cursor:pointer" class="select">
                                     <span class="seat_color"></span>
                                     <div class="seat_detail_info">
-                                        <span class="seat_level ng-binding">전체</span>
+                                        <span class="seat_level">전체</span>
                                     </div>
                                 </a>
                             </li>
                             
                             <!--좌석등급 별 list-->
-                            <li id="seat_grade_33625" depth="1" grade="grade" zones="grade.zones" selected="selected" ng-if="!grade.restriction" ng-click="select.select($event, $index, grade)" ng-mouseover="select.showTooltipAction($event,grade)" ng-mouseleave="select.hideTooltipAction($event)" ng-init="select.selectedList[$index] = select.selectState.selectedGrade.gradeId === grade.gradeId|| false" ng-repeat="grade in select.grades" class="ng-scope ng-isolate-scope">
+                            <li id="seat_grade_33625" selected="selected" class="ng-scope">
                                 <!-- [D] 좌석 선택된 경우 클래스명 select 추가, 구역이 선택된 경우엔 클래스명 select2로 변경 -->
-                                <a href="#" style="cursor:pointer" ng-class="{
-                                       select: grade.selected === true,
-                                       zero: grade.grade.remainCnt === 0
-                                   }">
-                                    <span class="seat_color ng-scope" style="background:#ffc000" ng-style="{
-                                        background:grade.grade.color
-                                      }" ng-if="grade.grade.color !== undefined"></span>
+                                <a href="#" style="cursor:pointer">
+                                    <span class="seat_color ng-scope" style="background:#ffc000"></span>
                                     <div class="seat_detail_info">
-                                        <span class="seat_grade ng-binding ng-scope" ng-if="grade.depth === 1">VIP석</span>
-                                        <span class="seat_price ng-binding ng-scope" ng-if="grade.isPriceExposure &amp;&amp; grade.grade.price !== undefined">
+                                        <span class="seat_grade">VIP석</span>
+                                        <span class="seat_price">
                                             140,000원</span>
-                                        <span class="seat ng-binding ng-scope" ng-if="grade.isRemainExposure &amp;&amp; grade.grade.remainCnt !== undefined">
+                                        <span class="seat">
                                             <span class="ng-binding">22</span>
                                             석
                                         </span>
@@ -432,21 +140,18 @@ border: 1px dashed; border-color: black;
 
                         </ul>
                     </div>
-                    <div class="reserve_artbx ng-isolate-scope">
+                    <div class="reserve_artbx">
                         <div class="bx_tit">
-                            <h4 class="reserve_tit ng-binding ng-hide" ng-show="select.isBtnShow()">좌석 선택</h4>
-                            <p class="reserve_notice_ly ng-binding ng-scope" ng-click="select.showNotice=!select.showNotice" ng-if="select.hasReserveCommissionContent">
+                            <h4 class="reserve_tit">좌석 선택</h4>
+                            <p class="reserve_notice_ly" ng-click="select.showNotice=!select.showNotice">
                                 <span class="sp"></span>
                                 좌석선점 및 자동배정 안내
                             </p>
                         </div>
                     </div>
                     <div class="reserve_btn">
-                        <a href="#" style="cursor:pointer" class="btn reserve_prev ng-binding" ng-click="right.prev()"><span>이전단계</span></a>
-                        <a href="#" class="btn ng-binding reserve_next3" style="cursor:pointer" ng-class="{
-                                reserve_next2 : !right.isNextDisabled(),
-                                reserve_next3 : right.isNextDisabled()
-                           }" ng-click="right.next()"><span>다음단계</span></a>
+                        <a href="#" style="cursor:pointer" class="btn"><span>이전단계</span></a>
+                        <a href="#" class="btn" style="cursor:pointer"><span>다음단계</span></a>
                     </div>
 
                 </div>
