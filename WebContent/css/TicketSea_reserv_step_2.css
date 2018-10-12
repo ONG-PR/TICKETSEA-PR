@@ -94,6 +94,7 @@
     .reserve_right>div:nth-child(2)>.bx_tit{
         border: 3px dotted; border-color: aqua;
         width: 100%; height: 25px;
+        box-sizing: border-box;
     }
     #select_seat_grade{
 /*      border: 3px solid; border-color: red;*/

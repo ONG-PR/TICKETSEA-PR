@@ -99,14 +99,14 @@
 
 /*--- top_info_area ---*/
 .top_info_area{
-    border: 5px dashed; border-color: chartreuse;
+    border: 2px dashed; border-color: grey;
     width: 100%; height: 15%;
     box-sizing: border-box;
 }
 /*--- /top_info_area ---*/
 /*--- reserve_artbx ---*/
 .reserve_artbx{
-    border: 5px dashed; border-color: blue;
+    border: 2px dashed; border-color: grey;
     width: 100%; height: 73%;
     box-sizing: border-box;
 }
